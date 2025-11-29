@@ -1,0 +1,10 @@
+{
+  "Weather Type": {
+    "sun": ["Clear", "Sun and Clear"],
+    "fog": ["Fog"],
+    "rain": ["Rain", "Fog and Rain"],
+    "snow": ["Snow",  "Fog and Snow"]
+  }
+
+
+}

@@ -1,0 +1,14 @@
+{
+  "Weather Type": {
+    "clear": ["Clear", "Sun and Clear"],
+    "foggy": ["Fog", "Fog and Rain", "Fog and Snow"],
+    "rainy": ["Rain"],
+    "snowy": ["Snow"]
+  },
+  "Sky Condition": {
+    "overcast": ["Overcast", "Unknown"],
+    "partly_cloudy": ["Partly Cloudy", "Cloudy","Clear Sky", "Partly Overcast"]
+  }
+
+
+}
