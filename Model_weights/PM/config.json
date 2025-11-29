@@ -1,0 +1,22 @@
+{
+    "hidden_dims": [
+        718,
+        668,
+        496,
+        96,
+        94,
+        159,
+        287,
+        206
+    ],
+    "batch_size": 55,
+    "lr": 0.010258492665389035,
+    "patch_size": 73,
+    "attn_tau": 0.7,
+    "attn_use_se": false,
+    "attn_softmax_spatial": true,
+    "attn_tv_lambda": 0.0,
+    "balance_loss": true,
+    "weight_mode": "soft",
+    "model_path": "Patch_search_best_1809202/best_model_fold_0.pth"
+}
