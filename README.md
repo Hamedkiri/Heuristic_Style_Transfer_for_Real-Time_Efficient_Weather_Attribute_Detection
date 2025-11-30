@@ -66,8 +66,8 @@ To test the model in real time using your **camera**, execute the following comm
 ```bash
 python test_PMG.py --data datas/test.json \
     --build_classifier classes_files.json \
-    --config_path Model_weights/PMG/trained_hyperparameters.json \
-    --model_path Model_weights/PMG/best_model.pth \
+    --config_path Model_weights/PMG/hyperparameters_PMG.json \
+    --model_path Model_weights/PMG/best_model_PMG.pth \
     --mode camera
 ```
 
@@ -87,7 +87,7 @@ To test the benchmarks, use the --mode benchmark option and specify the mapping 
 python test_PM.py --build_classifier datas/classes_files.json \ 
     --benchmark_mapping Test_benchmark/classes_correspondance_benchmark.json  \
     --config_path Model_weight/PatchGAN_MultiTasks/best_model_fold_0_hyperparameters.json \ 
-    --model_path Model_weight/PatchGAN_MultiTasks/best_model_fold_0.pth \
+    --model_path Model_weight/PatchGAN_MultiTasks/best_model_PM.pth \
     --mode benchmark \
     --benchmark_folder benchmark_dataset \ 
     --save_dir results_test
