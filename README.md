@@ -84,10 +84,10 @@ Find the data to test or train the model here : https://github.com/Hamedkiri/Wea
 To test the benchmarks, use the --mode benchmark option and specify the mapping file between your classes and those of the benchmark.
 
 ```bash
-python test_PM.py --build_classifier datas/classes_files.json \ 
-    --benchmark_mapping Test_benchmark/classes_correspondance_benchmark.json  \
-    --config_path Model_weight/PatchGAN_MultiTasks/best_model_fold_0_hyperparameters.json \ 
-    --model_path Model_weight/PatchGAN_MultiTasks/best_model_PM.pth \
+python test_PMG.py --build_classifier datas/classes_files.json \ 
+    --benchmark_mapping Test_benchmark/Match_between_our_classes_and_benchmarks.json \
+    --config_path Model_weights/PMG/hyperparameters_PMG.json \ 
+    --model_path Model_weights/PMG/best_model_PMG.pth \
     --mode benchmark \
     --benchmark_folder benchmark_dataset \ 
     --save_dir results_test
