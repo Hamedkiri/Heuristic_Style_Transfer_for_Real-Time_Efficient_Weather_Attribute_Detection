@@ -7,25 +7,25 @@ You can download the pre-trained weights for all models here: https://drive.goog
 
 ## 💡 Idea behind our article
 
+
+
+Find a better quality video here: https://youtu.be/JHXpfte628s
+
 https://github.com/user-attachments/assets/1600d3f9-f02c-44fa-9f44-3c70312349f4
 
 
 
 
 
-Find a better quality video here: https://youtu.be/JHXpfte628s
-
 
 
  
 ## 🎥 Real-time demonstration
 
+### Raspberry Pi
 **You can find the ready-to-use script to install the models on Raspberry Pi here** : https://github.com/Hamedkiri/Embedded_system_rasberry
 
-
-
-
-
+Find a better quality video here: https://youtu.be/hWglszOLNpg?si=zYHB_EMw8qjKdjgh
 
 
 
@@ -36,7 +36,6 @@ https://github.com/user-attachments/assets/bcc522a2-a49a-4988-8ba2-b00aff69bd73
 
 
 
-Find a better quality video here: https://youtu.be/hWglszOLNpg?si=zYHB_EMw8qjKdjgh
 
 
 
