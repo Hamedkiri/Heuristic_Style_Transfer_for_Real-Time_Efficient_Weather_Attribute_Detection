@@ -2,7 +2,8 @@
 
 ## 📌 Overview
 
-This project explores **style-based neural architectures** for real-time **weather classification** using advanced deep learning techniques. Our models integrate **PatchGAN, Gram Matrices, and Attention Mechanisms** to efficiently extract weather-related features from images.
+This project explores **style-based neural architectures** for real-time **weather classification** using advanced deep learning techniques. Our models integrate **PatchGAN, Gram Matrices, and Attention Mechanisms** to efficiently extract weather-related features from images. The pre-trained weights for the PM and PMG models (under 50 MB) are located in the Model_weight folder.
+You can download the pre-trained weights for all models here: https://drive.google.com/drive/folders/1W_4oVFMMREbiC0WJcQQmnM7evl4j5fV0?usp=sharing .
 
 ## 💡 Idea behind our article
 
@@ -19,8 +20,7 @@ Find a better quality video here: https://youtu.be/JHXpfte628s
  
 ## 🎥 Real-time demonstration
 
-
-
+**You can find the ready-to-use script to install the models on Raspberry Pi here** : https://github.com/Hamedkiri/Embedded_system_rasberry
 
 
 
@@ -63,10 +63,10 @@ Our **PatchGAN-MultiTasks (PM)** model, with only **3,188,736 parameters**, is o
 To test the model in real time using your **camera**, execute the following command:
 
 ```bash
-python test_PM.py --data datas/test.json \
+python test_PMG.py --data datas/test.json \
     --build_classifier classes_files.json \
-    --config_path Model_weight/best_hyperparams_fold_0.json \
-    --model_path Model_weight/best_model_fold_0.pth \
+    --config_path Model_weights/PMG/trained_hyperparameters.json \
+    --model_path Model_weights/PMG/best_model.pth \
     --mode camera
 ```
 
@@ -76,9 +76,8 @@ python test_PM.py --data datas/test.json \
 
 ---
 
-Stay tuned for updates! 📢 We will be releasing more resources and datasets soon.
 ## Distribution of the dataset
-![Dataset_repartition.png](images/Dataset_repartition.png)
+Find the data to test or train the model here : https://github.com/Hamedkiri/Weather_MultiTask_Datasets .
 ## Benchmark validation
 
 To test the benchmarks, use the --mode benchmark option and specify the mapping file between your classes and those of the benchmark.
@@ -93,4 +92,5 @@ python test_PM.py --build_classifier datas/classes_files.json \
     --save_dir results_test
 
 ```
+Stay tuned for updates! 📢 We will be releasing more resources soon.
 
