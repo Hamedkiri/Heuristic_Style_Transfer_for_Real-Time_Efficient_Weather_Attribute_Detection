@@ -51,9 +51,9 @@ pip install -r requirements.txt
 ```
 See the "readme_installation_on_window.txt" file for installation on Windows operating system
 
-## 🎯 Quick Test: PatchGAN-MultiTasks (PM) Model
+## 🎯 Quick Test: PatchGAN-MultiTasks-Gram (PMG) Model
 
-Our **PatchGAN-MultiTasks (PM)** model, with only **3,188,736 parameters**, is optimized for real-time execution. We will soon publish the **dataset** along with **detailed explanations** on how to perform various tests, including:
+Our **PatchGAN-MultiTasks-Gram(PMG)** model, with only around **3 M parameters**, is optimized for real-time execution. We will soon publish  **detailed explanations** on how to perform various tests, including:
 
 - **Grad-CAM** & **T-SNE** visualizations 🖼️
 - **Modularity tests** by selectively removing tasks 🔍
