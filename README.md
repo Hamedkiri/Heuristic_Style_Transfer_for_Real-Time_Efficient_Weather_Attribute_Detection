@@ -79,7 +79,7 @@ python test_PMG.py --data datas/test.json \
 
 ---
 
-## Distribution of the dataset
+## Datasets
 Find the data to test or train the model here : https://github.com/Hamedkiri/Weather_MultiTask_Datasets .
 ## Benchmark validation
 
