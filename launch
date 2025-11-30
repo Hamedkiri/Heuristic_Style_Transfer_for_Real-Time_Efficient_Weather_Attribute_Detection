@@ -1,0 +1,15 @@
+
+1* Camera
+2* Classifier
+3* tsne
+
+#PM
+ -  python test_PM.py --build_classifier build_classifiers/Tasks.json --model_path Model_weights/PM/best_model_fold_0.pth  --config_path Model_weights/PM/hyperparameters.json --mode camera
+ -  python test_PM.py --build_classifier build_classifiers/Tasks.json --model_path Model_weights/PM/best_model_fold_0.pth  --config_path Model_weights/PM/hyperparameters.json --mode classifier --data /media/hamed/8TO_2/sauvegardes_28_06_2024/Annotations_files/fusion/4FOUR/Split_heterogene_test_train_souce_disjoint/test.json --num_samples 25000
+#PMG
+ -  python test_PMG.py --build_classifier build_classifiers/Tasks.json --model_path Model_weights/PMG/best_model.pth --config_path Model_weights/PMG/trained_hyperparameters.json  --mode camera
+ -  python test_PMG.py --build_classifier build_classifiers/Tasks.json --model_path Model_weights/PMG/best_model.pth --config_path Model_weights/PMG/trained_hyperparameters.json  --mode classifier --data /media/hamed/8TO_2/sauvegardes_28_06_2024/Annotations_files/fusion/4FOUR/Split_heterogene_test_train_souce_disjoint/test.json --num_samples 25000
+#RTM
+ -  python test_RTM.py --build_classifier build_classifiers/Tasks.json --config_path Model_weights/Others/Take_diversity/RTM/retrained_model_fold_0_hyperparameters.json --model_path Model_weights/Others/Take_diversity/RTM/retrained_model_fold_0.pth --mode camera
+ -  python test_RTM.py --build_classifier build_classifiers/Tasks.json --config_path Model_weights/Others/Take_diversity/RTM/best/hyperparameters.json --model_path Model_weights/Others/Take_diversity/RTM/best/model.pth --mode classifier --data /media/hamed/8TO_2/sauvegardes_28_06_2024/Annotations_files/fusion/4FOUR/Split_test_train_same_distribution/test.json --num_samples 50
+ -  python test_RTM.py --build_classifier build_classifiers/Tasks.json --config_path Model_weights/Others/Take_diversity/RTM/best/hyperparameters_RTM.json --model_path Model_weights/Others/Take_diversity/RTM/best/best_model_RTM.pth --mode tsne_interactive --data /media/hamed/8TO_2/sauvegardes_28_06_2024/Annotations_files/fusion/4FOUR/Split_test_train_same_distribution/test.json --num_samples 25000

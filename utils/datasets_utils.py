@@ -147,6 +147,28 @@ class MultiTaskDataset(torch.utils.data.Dataset):
         return img, labels
 
 
+def collate_multitask(batch):
+    """
+    batch: liste de tuples (image_tensor, labels_dict)
+      - image_tensor: Tensor [3,H,W]
+      - labels_dict:  {task_name: int | None}
+    Retour:
+      - images: Tensor [B,3,H,W]
+      - labels: dict {task_name: Tensor[B] (long)}, avec -1 pour "absent"
+    """
+    imgs, labs_list = zip(*batch)
+    imgs = torch.stack(imgs, dim=0)
+
+    tasks = labs_list[0].keys()
+    out = {}
+    for t in tasks:
+        vals = []
+        for d in labs_list:
+            y = d.get(t, None)
+            vals.append(-1 if y is None else int(y))
+        out[t] = torch.tensor(vals, dtype=torch.long)
+    return imgs, out
+
 def multitask_collate(batch, task_names: List[str], ignore_index: int = IGNORE_INDEX):
     """
     Collate pour dataset multi-tâches.
