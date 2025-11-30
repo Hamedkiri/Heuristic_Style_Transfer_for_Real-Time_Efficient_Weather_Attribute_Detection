@@ -59,7 +59,7 @@ Our **PatchGAN-MultiTasks-Gram(PMG)** model, with only around **3 M parameters**
 - **Modularity tests** by selectively removing tasks 🔍
 - Performance validation against our published results 📊
 
-For now, you will find example commands in the ```bash launch```.
+For now, you will find example commands in the: ```launch.txt```.
 
 ### ✅ Real-Time Inference with a Camera
 
