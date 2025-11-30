@@ -25,6 +25,8 @@ https://github.com/user-attachments/assets/1600d3f9-f02c-44fa-9f44-3c70312349f4
 ### Raspberry Pi
 **You can find the ready-to-use script to install the models on Raspberry Pi here** : https://github.com/Hamedkiri/Embedded_system_rasberry
 
+### Demonstration with a world tour
+
 Find a better quality video here: https://youtu.be/hWglszOLNpg?si=zYHB_EMw8qjKdjgh
 
 
