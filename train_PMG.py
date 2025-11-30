@@ -9,7 +9,7 @@ from torchvision import transforms
 from sklearn.model_selection import KFold
 from datas import MultiTaskDataset
 from torch.utils.tensorboard import SummaryWriter
-from Models.models_PatchGAN import MultiTaskPatchGAN
+from Models.models_PM import MultiTaskPatchGAN
 from Functions.function_PatchGAN import train_model, evaluate_model
 
 # -----------------------------------------------------------------------

@@ -12,6 +12,79 @@ from PIL import Image
 
 IGNORE_INDEX = -100
 
+def _get_loader_paths(loader):
+    """
+    Renvoie la liste des chemins d’images selon l’ordre d’itération du DataLoader.
+    Compatible avec:
+      - Dataset ayant .paths_list (ancienne version)
+      - Dataset ayant .samples (liste de tuples (path, labels) ou dicts)
+      - Subset(Dataset, indices)
+    """
+    ds = loader.dataset
+    # Récupération du dataset de base et des indices
+    if isinstance(ds, Subset):
+        base = ds.dataset
+        idxs = [int(i) for i in ds.indices]
+    else:
+        base = ds
+        idxs = list(range(len(base)))
+
+    # 1) Ancienne variante: attribut paths_list
+    if hasattr(base, 'paths_list'):
+        return [base.paths_list[i] for i in idxs]
+
+    # 2) Variante actuelle: attribut samples
+    if hasattr(base, 'samples'):
+        # samples peut être: [(path, labels), ...]  OU  [ {'image_path':..., ...}, ... ]
+        if len(base.samples) == 0:
+            return []
+        s0 = base.samples[0]
+        if isinstance(s0, (list, tuple)):
+            # (path, labels)
+            return [base.samples[i][0] for i in idxs]
+        elif isinstance(s0, dict):
+            # {'image_path': ...} ou {'path': ...}
+            paths = []
+            for i in idxs:
+                rec = base.samples[i]
+                p = rec.get('image_path', rec.get('path'))
+                if p is None:
+                    raise KeyError("Impossible de trouver 'image_path' ou 'path' dans sample dict.")
+                paths.append(p)
+            return paths
+
+    # 3) Fallback si le dataset expose une méthode
+    if hasattr(base, 'get_path') and callable(getattr(base, 'get_path')):
+        return [base.get_path(i) for i in idxs]
+
+    raise AttributeError("Dataset inconnu: ni 'paths_list', ni 'samples', ni 'get_path(i)'.")
+
+def map_folder_to_class(folder_name, class_list):
+    """
+    Essaie de faire correspondre le nom du dossier (ground truth)
+    à l'une des classes en vérifiant si le nom du dossier est contenu
+    dans le nom de la classe (sans tenir compte de la casse).
+    """
+    folder_lower = folder_name.lower()
+    for cls in class_list:
+        if folder_lower in cls.lower():
+            return cls
+    return None
+
+
+
+VALID_EXTS = {'.jpg', '.jpeg', '.png', '.bmp'}
+def collect_image_paths(folder):
+    """
+    Retourne la liste de tous les fichiers images dans `folder` et ses sous-dossiers.
+    """
+    paths = []
+    for root, _, files in os.walk(folder):
+        for fn in files:
+            ext = os.path.splitext(fn)[1].lower()
+            if ext in VALID_EXTS:
+                paths.append(os.path.join(root, fn))
+    return paths
 
 class MultiTaskDataset(Dataset):
     """
