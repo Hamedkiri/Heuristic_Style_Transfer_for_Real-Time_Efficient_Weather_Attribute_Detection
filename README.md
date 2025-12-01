@@ -67,7 +67,7 @@ To test the model in real time using your **camera**, execute the following comm
 
 ```bash
 python test_PMG.py --data datas/test.json \
-    --build_classifier classes_files.json \
+    --build_classifier build_classifiers/Tasks.json \
     --config_path Model_weights/PMG/hyperparameters_PMG.json \
     --model_path Model_weights/PMG/best_model_PMG.pth \
     --mode camera
