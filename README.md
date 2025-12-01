@@ -44,7 +44,7 @@ https://github.com/user-attachments/assets/bcc522a2-a49a-4988-8ba2-b00aff69bd73
 
 ## 🚀 Package Installation
 
-Before running the model, ensure you have **Python 3.8.19** installed. You can create a virtual environment and install the necessary dependencies with:
+Before running the model, ensure you have **Python  3.13.7** installed. You can create a virtual environment and install the necessary dependencies with:
 
 ```bash
 pip install -r requirements.txt
